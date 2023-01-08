@@ -1,0 +1,6 @@
+---
+
+- hosts: docker
+  tasks:
+    - name: Create a docker container on dockerhost
+      command: docker run -d --name regapp-server -p 8082:8080 rohitdocker123456789/regapp:latest
