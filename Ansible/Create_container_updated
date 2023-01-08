@@ -8,9 +8,11 @@
 
     - name: remove the container
       command:  docker rm regapp-server
-
+      ignore_errors: yes
+      
     - name: remove the images
       command: docker rmi rohitdocker123456789/regapp:latest
-
+      ignore_errors: yes
+      
     - name: Create a docker container on dockerhost
       command: docker run -d --name regapp-server -p 8082:8080 rohitdocker123456789/regapp:latest
