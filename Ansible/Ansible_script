@@ -1,4 +1,5 @@
 ---
+
 - hosts: ansible
   become: true
   tasks:
@@ -6,3 +7,9 @@
       command: "docker build -t regapp:latest ."
       args:
         chdir: /opt/docker
+        
+    - name: Tag the images
+      command: docker tag regapp:latest rohitdocker123456789/regapp:latest
+
+    - name: Pusth the image to dockerhub
+      command: docker push rohitdocker123456789/regapp:latest
